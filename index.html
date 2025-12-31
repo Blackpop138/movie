@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CineScroll — Movies</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CineScroll home">
+      <span class="brandMark">🎬</span><span class="brandText">CineScroll</span>
+    </a>
+
+    <form id="searchForm" class="search" autocomplete="off">
+      <input id="searchInput" type="search" placeholder="Search movies, genres, people…" aria-label="Search" />
+      <button type="submit" class="btn">Search</button>
+    </form>
+
+    <div class="topActions">
+      <button id="toggleTheme" class="iconBtn" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+      <a class="btnGhost" href="favorites.html" title="Favorites">★ Favorites</a>
+      <a class="btnGhost" href="login.html" title="Sign in">Sign in</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Discover movies with infinite scroll.</h1>
+        <p>Fast search, filters, favorites, and a clean player experience — all in a lightweight static site.</p>
+        <div class="chips" id="quickChips" aria-label="Quick filters"></div>
+      </div>
+      <div class="heroCard">
+        <div class="stat">
+          <div class="statNum" id="statCount">—</div>
+          <div class="statLbl">movies</div>
+        </div>
+        <div class="stat">
+          <div class="statNum" id="statGenres">—</div>
+          <div class="statLbl">genres</div>
+        </div>
+        <div class="stat">
+          <div class="statNum" id="statReady">Offline</div>
+          <div class="statLbl">ready</div>
+        </div>
+        <p class="tiny">Tip: swap <code>movies.json</code> with your own dataset. Video URLs can be trailers you have rights to.</p>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="controlRow">
+        <label class="control">
+          <span>Genre</span>
+          <select id="genreSelect"></select>
+        </label>
+        <label class="control">
+          <span>Year</span>
+          <select id="yearSelect"></select>
+        </label>
+        <label class="control">
+          <span>Sort</span>
+          <select id="sortSelect">
+            <option value="relevance">Relevance</option>
+            <option value="rating_desc">Rating ↓</option>
+            <option value="year_desc">Year ↓</option>
+            <option value="year_asc">Year ↑</option>
+            <option value="title_asc">Title A→Z</option>
+          </select>
+        </label>
+        <label class="control">
+          <span>Min rating</span>
+          <input id="minRating" type="range" min="0" max="10" step="0.1" value="0" />
+          <span class="badge" id="minRatingBadge">0.0</span>
+        </label>
+      </div>
+
+      <div class="controlRow">
+        <button id="clearFilters" class="btnGhost">Clear filters</button>
+        <div class="right">
+          <span class="badge" id="resultsBadge">0 results</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="grid" class="grid" aria-label="Movie results"></section>
+
+    <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+
+    <footer class="footer">
+      <p>Built for demos. For real streaming, only host content you own or are licensed to distribute.</p>
+      <p class="tiny">© <span id="yearNow"></span> CineScroll</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

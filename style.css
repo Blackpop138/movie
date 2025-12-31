@@ -1,0 +1,82 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color: white;
+}
+
+header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  background: rgba(2,6,23,0.9);
+  position: sticky;
+  top: 0;
+}
+
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.genres {
+  padding: 15px;
+  text-align: center;
+}
+
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(2,6,23,0.9);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(236,72,153,0.2);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+}

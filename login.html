@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign in — CineScroll</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CineScroll home">
+      <span class="brandMark">🎬</span><span class="brandText">CineScroll</span>
+    </a>
+
+    <div class="topActions">
+      <button id="toggleTheme" class="iconBtn" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+      <a class="btnGhost" href="favorites.html" title="Favorites">★ Favorites</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="authCard">
+      <h1>Sign in</h1>
+      <p class="tiny">Demo-only. This stores a “session” in <code>localStorage</code>.</p>
+
+      <form id="loginForm" class="authForm">
+        <label>
+          <span>Email</span>
+          <input type="email" id="email" required placeholder="you@example.com" />
+        </label>
+
+        <label>
+          <span>Password</span>
+          <input type="password" id="password" required placeholder="••••••••" />
+        </label>
+
+        <button class="btn" type="submit">Sign in</button>
+        <button class="btnGhost" type="button" id="signOutBtn">Sign out</button>
+      </form>
+
+      <div class="tiny" id="sessionInfo"></div>
+    </section>
+
+    <footer class="footer">
+      <p class="tiny">© <span id="yearNow"></span> CineScroll</p>
+    </footer>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

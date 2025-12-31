@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie — CineScroll</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="CineScroll home">
+      <span class="brandMark">🎬</span><span class="brandText">CineScroll</span>
+    </a>
+
+    <div class="crumbs">
+      <a href="index.html">Browse</a>
+      <span>›</span>
+      <span id="crumbTitle">Movie</span>
+    </div>
+
+    <div class="topActions">
+      <button id="toggleTheme" class="iconBtn" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+      <a class="btnGhost" href="favorites.html" title="Favorites">★ Favorites</a>
+      <a class="btnGhost" href="login.html" title="Sign in">Sign in</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="movieShell" class="movieShell">
+      <div class="moviePoster" id="poster"></div>
+
+      <div class="movieMeta">
+        <h1 id="title">Loading…</h1>
+        <div class="metaLine" id="metaLine"></div>
+        <p id="overview" class="overview"></p>
+
+        <div class="metaGrid">
+          <div class="kv"><span>Director</span><strong id="director">—</strong></div>
+          <div class="kv"><span>Country</span><strong id="country">—</strong></div>
+          <div class="kv"><span>Runtime</span><strong id="runtime">—</strong></div>
+          <div class="kv"><span>Rating</span><strong id="rating">—</strong></div>
+        </div>
+
+        <div class="actionsRow">
+          <button id="favBtn" class="btn">★ Add to favorites</button>
+          <a id="backBtn" class="btnGhost" href="index.html">Back</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="playerSection">
+      <div class="playerHeader">
+        <h2>Player</h2>
+        <p class="tiny">By default this plays a public demo video. Replace with your own licensed trailer/video URL or local file.</p>
+      </div>
+
+      <div class="playerCard">
+        <video id="video" controls playsinline preload="metadata"></video>
+        <div class="playerTools">
+          <button id="copyLink" class="btnGhost">Copy video link</button>
+          <label class="filePick btnGhost">
+            Load local video…
+            <input id="fileInput" type="file" accept="video/*" />
+          </label>
+          <span class="badge" id="videoLabel">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="sectionHead">
+        <h2>More like this</h2>
+        <a class="btnGhost" href="index.html">Browse all</a>
+      </div>
+      <div id="relatedGrid" class="grid"></div>
+    </section>
+
+    <footer class="footer">
+      <p class="tiny">© <span id="yearNow"></span> CineScroll</p>
+    </footer>
+  </main>
+
+  <script src="movie.js"></script>
+</body>
+</html>
